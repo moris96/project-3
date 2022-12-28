@@ -19,9 +19,8 @@ app.use(express.static(path.join(__dirname, 'build')))
 
 app.use(require('./config/checkToken'))
 
-// app.use('/api/users', require('./routes/api/users'))
-// app.use('/api/pokeBags', require('./routes/api/pokeBags'))
-//use these once the routes/apis are done 
+app.use('/api/users', require('./routes/api/users'))
+app.use('/api/pokeBags', require('./routes/api/pokeBags'))
 
 app.get('/api/test', (req, res) => {
     res.json({'eureka': 'you have found it'})
